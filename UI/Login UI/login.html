@@ -3,34 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Document</title>
     <style>
         body {
-            background-color: black;
+            background-color: rgb(0, 0, 45);
         }
+
+
         div {
             width: 320px;
             height: 200px;
             background-color:whitesmoke;
-            margin:center;
-            
+            margin-right:auto;
+            margin-left: auto;
+            text-align: center;
+            padding-top: 10%;
+            margin-top: 30%;
+            font-size: large;
+            border:0.5rem solid;
+            border-color: black;
+            border-radius: 25px;
 
+        }
+
+        p4 {
+            position: absolute; top: 0px; right: 0px;
+            color: aliceblue;
+        }
+        input {
+            border: 0.1rem solid;
+            border-color:rgba(0, 0, 0, 0.738);
+        }
+        p1 {
+            font-style: italic;
+        }
+        p2 {
+            font-style: italic;
         }
     </style>
 </head>
 <body>
+    <p4>AMVA</p4>
     <div>
         <p1>Username</p1>
         <br>
-
         <input type="text" id="user" name="usertextbox">
+        <br>
+        <label id="userlabel"></label>
         <br>
         <p2>Password</p2>
         <br>
         <input type="number" id="pass">
         <br>
-        <button onclick="login_button()">LOGIN</button>
+        <label id="passlabel"></label>
+        <br>
+        <button>LOGIN</button>
     </div>
 </body>
-</html>
-<script src="login.js"></script>
+</html> 
