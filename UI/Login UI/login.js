@@ -10,6 +10,7 @@ function login_button() {
     username.value = ""
     password.value = ""
     loginbox.style.borderColor = "black"
+    location.replace("schedule.html")
   } else {
     passlabel.textContent = "Incorrect Login. Your username or password is incorrect"
     loginbox.style.borderColor = "red"
