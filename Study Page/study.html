@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #start_timer{
+        background-color:lightblue
+    }
+    #stop_timer{
+        background-color:lightblue
+    }
+</style>
 <body>
     <p>Welcome to the Study Page</p>
     <button onclick="dashboard()">Back to Dashboard</button>
+    <div id="safeTimer">
+        <h2>Safe Timer</h2>
+        <p id="safeTimerDisplay"></p>
+    </div>
+    <button id="start_timer" onclick="start_timer()"type="button">Start Timer</button>
+    <button id="stop_timer" type="button">Stop Timer</button>
+    <br>
+    <input id="user_time">
 </body>
 </html>
 <script src="study.js"></script>
+</body>
+</html>
