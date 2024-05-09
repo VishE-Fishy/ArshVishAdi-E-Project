@@ -6,7 +6,7 @@ function save(){
     window.print()
 }
 function clearSchedule(){
-    if (confirm("Are you sure you want to clear?") == true) {
+    if (confirm("Are you sure you want to clear your schedule?") == true) {
         document.getElementById("MondayTask1").value = ""
         document.getElementById("TuesdayTask1").value = ""
         document.getElementById("WednesdayTask1").value = ""
