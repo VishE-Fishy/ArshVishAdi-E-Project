@@ -5,9 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: lightblue;
+    }
+    table, th, td {
+        border: 1px solid black
+    }
+    h1{
+        text-align:center;
+    }
+</style>
 <body>
-    <p>Welcome to the Schedule Page</p>
-    <button onclick="dashboard()">Back to Dashboard</button>
+    <h1>Schedule Your Week!</h1>
+    <button onclick="dashboard()" style="background-color: orange;">Back to Dashboard</button>
+    <button onclick="save()" style="background-color: lightseagreen;">Save Schedule As PDF</button>
+    <button onclick="edit()" style="background-color: greenyellow ;">Edit Schedule</button>
+    <button onclick="stop_edit()" style="background-color: lightcoral ;">Stop Editing Schedule</button>
+    <button onclick="clearSchedule()" style="background-color: yellow;">Clear Schedule</button>
+    <table style="width:100%">
+        <tr>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+        <tr>
+            <td>Task #1: <input disabled type="text" id="MondayTask1"></td>
+            <td>Task #1: <input disabled type="text" id="TuesdayTask1"></td>
+            <td>Task #1: <input disabled type="text" id="WednesdayTask1"></td>
+            <td>Task #1: <input disabled type="text" id="ThursdayTask1"></td>
+            <td>Task #1: <input disabled type="text" id="FridayTask1"></td>
+            <td>Task #1: <input disabled type="text" id="SaturdayTask1"></td>
+            <td>Task #1: <input disabled type="text" id="SundayTask1"></td>
+        </tr>
+        <tr>
+            <td>Task #2: <input disabled type="text" id="MondayTask2"></td>
+            <td>Task #2: <input disabled type="text" id="TuesdayTask2"></td>
+            <td>Task #2: <input disabled type="text" id="WednesdayTask2"></td>
+            <td>Task #2: <input disabled type="text" id="ThursdayTask2"></td>
+            <td>Task #2: <input disabled type="text" id="FridayTask2"></td>
+            <td>Task #2: <input disabled type="text" id="SaturdayTask2"></td>
+            <td>Task #2: <input disabled type="text" id="SundayTask2"></td>
+          </tr>
+          <tr>
+            <td>Task #3: <input disabled type="text" id="MondayTask3"></td>
+            <td>Task #3: <input disabled type="text" id="TuesdayTask3"></td>
+            <td>Task #3: <input disabled type="text" id="WednesdayTask3"></td>
+            <td>Task #3: <input disabled type="text" id="ThursdayTask3"></td>
+            <td>Task #3: <input disabled type="text" id="FridayTask3"></td>
+            <td>Task #3: <input disabled type="text" id="SaturdayTask3"></td>
+            <td>Task #3: <input disabled type="text" id="SundayTask3"></td>
+          </tr>
+          <tr>
+            <td>Task #4: <input disabled type="text" id="MondayTask4"></td>
+            <td>Task #4: <input disabled type="text" id="TuesdayTask4"></td>
+            <td>Task #4: <input disabled type="text" id="WednesdayTask4"></td>
+            <td>Task #4: <input disabled type="text" id="ThursdayTask4"></td>
+            <td>Task #4: <input disabled type="text" id="FridayTask4"></td>
+            <td>Task #4: <input disabled type="text" id="SaturdayTask4"></td>
+            <td>Task #4: <input disabled type="text" id="SundayTask4"></td>
+          </tr>
+          <tr>
+            <td>Task #5: <input disabled type="text" id="MondayTask5"></td>
+            <td>Task #5: <input disabled type="text" id="TuesdayTask5"></td>
+            <td>Task #5: <input disabled type="text" id="WednesdayTask5"></td>
+            <td>Task #5: <input disabled type="text" id="ThursdayTask5"></td>
+            <td>Task #5: <input disabled type="text" id="FridayTask5"></td>
+            <td>Task #5: <input disabled type="text" id="SaturdayTask5"></td>
+            <td>Task #5: <input disabled type="text" id="SundayTask5"></td>
+          </tr>
+      </table>
 </body>
 </html>
 <script src="schedule.js"></script>
