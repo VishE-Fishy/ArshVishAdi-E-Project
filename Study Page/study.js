@@ -1,22 +1,47 @@
 function dashboard(){
     location.replace("dashboard.html")
 }
-
-function message(){
-    alert("The timer has ended")
-
-}
-function start_timer(){
-        let secondlimit = document.getElementById("user_time").value
-        var limit = secondlimit * 1000 + 1025
-        var downloadTimer = setInterval(function(){
-            if(secondlimit <= 0){
-                clearInterval(downloadTimer);
-                document.getElementById("countdown").innerHTML = "Finished";
-  }         else {
-                document.getElementById("countdown").innerHTML = secondlimit + " seconds remaining";
-  }
-            secondlimit -= 1;
-            }, 1000);
-  setTimeout(message, limit);
+var timerDisplay;
+function timer(cancel) {
+      var countdown = document.getElementById("user_time").value; 
+      if (cancel == 0) {
+        if (isNaN(parseInt(countdown))) {
+        document.getElementById('countdown').innerHTML = "Please input an integer"
+        alert("Please input an integer")
+        } else {
+          timerDisplay = setInterval(function() {
+          document.getElementById("start_timer").disabled = true;
+          document.getElementById("stop_timer").disabled = false;
+          document.getElementById("reset_timer").disabled = false;
+          document.getElementById('user_time').value = countdown;
+          if(countdown == 0){
+              document.getElementById("countdown").innerHTML = "Timer has ended";
+              clearInterval(timerDisplay);
+              alert("Timer has ended")
+              document.getElementById("start_timer").disabled = false
+          } 
+          else{
+              document.getElementById('countdown').innerHTML = countdown+ " secs remaining";
+              countdown--;
+          }      
+          }, 1000);
+        }
     }
+      if (cancel == 1) {
+        clearInterval(timerDisplay);
+        document.getElementById("start_timer").disabled = false;
+        document.getElementById("stop_timer").disabled = true;
+        document.getElementById("reset_timer").disabled = false; 
+        alert("Timer has been stopped")  
+    }
+      if (cancel == 2) {
+        if (confirm("Are you sure you want to reset the timer?") == true){
+          clearInterval(timerDisplay);
+          document.getElementById("start_timer").disabled = false;
+          document.getElementById("stop_timer").disabled = true;
+          document.getElementById("reset_timer").disabled = true;
+          document.getElementById('user_time').value = "";
+          document.getElementById("countdown").innerHTML = "Timer has been reset"
+      }
+    }
+  }
