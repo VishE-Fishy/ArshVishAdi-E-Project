@@ -6,22 +6,47 @@
     <title>Document</title>
 </head>
 <style>
+    #countdown{
+        font-size: xx-large;
+    }
+    #dashboardButton{
+        background-color:orange
+    }
     #start_timer{
         background-color:lightblue
     }
     #stop_timer{
         background-color:lightblue
     }
+    #reset_timer{
+        background-color:lightblue
+    }
+    #dashboardButton:hover{
+        background-color:rgb(193, 125, 0)
+    }
+    #start_timer:hover{
+        background-color:rgb(98, 170, 194)
+    }
+    #stop_timer:hover{
+        background-color:rgb(98, 170, 194)
+    }
+    #reset_timer:hover{
+        background-color:rgb(98, 170, 194)
+    }
+    body{
+        background-color: rgb(58, 159, 159);
+    }
 </style>
 <body>
-    <p>Welcome to the Study Page</p>
-    <button onclick="dashboard()">Back to Dashboard</button>
-    <div id="safeTimer">
-        <h2>Safe Timer</h2>
-        <p id="safeTimerDisplay"></p>
+    <button id="dashboardButton" onclick="dashboard()">Back to Dashboard</button>
+    <div id="Timer">
+        <h2>Timer</h2>
+        <p id="TimerDisplay"></p>
     </div>
-    <button id="start_timer" onclick="start_timer()"type="button">Start Timer</button>
-    <button id="stop_timer" type="button">Stop Timer</button>
+    <button id="start_timer" onclick="timer(0)">Start Timer</button>
+    <button id="stop_timer" onclick="timer(1)" disabled>Stop Timer</button>
+    <button id="reset_timer" onclick="timer(2)" disabled>Reset Timer</button>
+    <br>
     <label id="countdown"></label>
     <br>
     <input id="user_time">
