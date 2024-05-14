@@ -13,6 +13,10 @@ function timer(cancel) {
           document.getElementById("start_timer").disabled = true;
           document.getElementById("stop_timer").disabled = false;
           document.getElementById("reset_timer").disabled = false;
+          //document.getElementById('user_hours').value = hours
+          //document.getElementById('user_minutes').value = minutes
+          //document.getElementById('user_seconds').value = seconds
+          //var countdown = hours * 3600 + minutes * 60 + seconds
           document.getElementById('user_seconds').value = countdown;
           if(countdown == 0){
               document.getElementById("countdown").innerHTML = "Timer has ended";
