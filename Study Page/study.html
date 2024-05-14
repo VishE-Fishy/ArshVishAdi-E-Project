@@ -42,6 +42,21 @@
     #music{
         margin-left: auto;
     }
+    #start_stopwatch{
+        background-color:lightgreen;
+        padding: 30px;
+    }
+    #stop_stopwatch{
+        background-color:lightcoral;
+        padding: 30px;
+    }
+    #reset_stopwatch{
+        background-color:yellow;
+        padding: 30px;
+    }
+    #stopwatch{
+        padding: 30px;
+    }
 </style>
 <body>
     <button id="dashboardButton" onclick="dashboard()">Back to Dashboard</button>
@@ -67,7 +82,19 @@
             <td><input id="user_seconds"></td>
         </tr>       
     </table>
-
+    
+    <table>
+        <tr>
+            <td><button id="start_stopwatch" onclick="stopwatch(0)">Start Stopwatch</button></td>
+            <td><button id="stop_stopwatch" onclick="stopwatch(1)" disabled>Stop Stopwatch</button></td>
+            <td><button id="reset_stopwatch" onclick="stopwatch(2)" disabled>Reset Stopwatch</button></td>
+        </tr>
+        <tr>
+            <td>
+                <label id="stopwatch">test</label>
+            </td>
+        </tr>
+    </table>
     
     <table id="music">
     <tr>
