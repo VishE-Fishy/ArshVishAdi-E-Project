@@ -1,3 +1,6 @@
+function dashboard(){
+    location.replace("dashboard.html")
+}
 let timer;
 let hours = 0;
 let minutes = 0;
