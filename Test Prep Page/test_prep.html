@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <style>
         body {
             background-color: rgb(0, 0, 45);
             margin-top: 20px;
         }
- 
+
         .hori-timeline .events {
             border-top: 6px solid rgb(255, 255, 255);
         }
- 
+
         .hori-timeline .events 
         .event-list {
             display: block;
@@ -22,7 +22,7 @@
             text-align: center;
             margin-right: 0;
         }
- 
+
         .hori-timeline .events 
         .event-list:before {
             content: "";
@@ -31,7 +31,7 @@
             border-right: 2px dashed #ffffff;
             top: 0;
         }
- 
+
         .hori-timeline .events .event-list 
         .event-date {
             position: absolute;
@@ -47,10 +47,50 @@
 
         .taskadder {
             background-color: transparent;
-            border-radius: 50px;
+            border-radius: 100px;
             color: whitesmoke;
             text-align:center ;
             border: 2px solid white;
+        }
+
+        .taskadder2 {
+            background-color: transparent;
+            border-radius: 100px;
+            color: rgb(0, 0, 45);
+            text-align:center ;
+            
+            border: 2px solid rgb(0, 0, 45);
+        }
+
+        
+        .tasker:hover {
+            transform: scale(1.1);
+        }
+
+      
+        .tasker {
+          height: 200px;
+          transition: transform 1s;
+          border-radius: 5px;
+          background-color: whitesmoke;
+          box-shadow: 0 0 13px 0 rgba(236, 236, 241, 0.44);
+          border: none;
+          
+        }
+
+        .stopwatche {
+          font-size: 13px;
+        }
+        .minitasks {
+          text-align: left;
+          border-left: 40px solid whitesmoke;
+        }
+
+        .taskinputer {
+          background-color: transparent;
+          border-style: none;
+          border: none;
+          
         }
 
 
@@ -58,8 +98,8 @@
             color: rgba(245, 245, 245, 0.66);
             border-color: rgba(245, 245, 245, 0.66);
         }
- 
- 
+
+
         @media (min-width: 1140px) {
             .hori-timeline .events 
             .event-list {
@@ -67,18 +107,32 @@
                 width: 24%;
                 padding-top: 45px;
             }
- 
+
             .hori-timeline .events 
             .event-list .event-date {
                 top: -12px;
             }
         }
- 
+
         .card {
             margin-top:15%;
             border: none;
             margin-bottom: 24px;
             /* box-shadow: 0 0 13px 0 rgba(236, 236, 241, 0.44); */
+        }
+        #title {
+          color: whitesmoke;
+          font-size: 30px;
+          text-align: center;
+          position: fixed;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          background-color: rgb(0, 0, 45);
+          padding: 10px 0;
+          z-index: 1000;
+          
         }
     </style>
 </head>
@@ -88,69 +142,153 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mb-5 text-success">
-                            Timeline
+                        <h4 id="title">
+                            TEST PREPERATION TIMELINE
                         </h4>
- 
+
                         <div class="hori-timeline" dir="ltr">
                             <ul class="list-inline events">
                                 <li class="list-inline-item event-list">
+                                    <br>
+                                    <br>
                                     <div class="px-4">
-                                        <br>
                                         <div>
-                                            <button class="taskadder">+</button>
+                                            <button class="taskadder" id="addtask" onclick="addtask()">+</button>
                                             <!-- <a href="main.html"
                                                class="btn btn-success btn-sm">
                                                more...
                                             </a> -->
                                         </div>
-                                        <div>
-                                            <input type="text">
+                                        <br>
+                                        <br>
+                                        <div class="tasker">
+                                            <button class="taskadder2">✔</button>
+                                            <input class="taskinputer" type="text" placeholder="Add a task">
+                                            <input class="timing" type="time" placeholder="0:30" step="60">
+                                            <br>
+                                            <br>
+                                          <div class="minitasks">
+                                            <button class="taskadder2">✔</button>
+                                            <input class="taskinputer" type="text" placeholder="Add a task">
+                                            <br>
+                                            <br>
+                                            <button class="taskadder2">✔</button>
+                                            <input class="taskinputer" type="text" placeholder="Add a task">
+                                            <br>
+                                            <br>
+                                            <button class="taskadder2">✔</button>
+                                            <input class="taskinputer" type="text" placeholder="Add a task">
+                                          </div>
+                                          <button onclick="startStopwatch()">></button>
+                                          <button onclick="pauseStopwatch()">||</button>
+                                          <h2 class="stopwatche" id="stopwatch">00:00:00</h2>
+                                            
                                         </div>
                                     </div>
- 
+
                                 </li>
                                 <li class="list-inline-item event-list">
                                     <div class="px-4">
- 
-                                        <h5 class="font-size-16 text-warning">
-                                            Goal 2
- 
-                                        </h5>
-                                        <p class="text-muted">
-                                            Description
-                                        </p>
-                                        <div>
-                                            <button class="taskadder">+</button>
-                                        </div>
+                                      <div>
+                                        <button class="taskadder" id="addtask" onclick="addtask()">+</button>
+                                        <!-- <a href="main.html"
+                                           class="btn btn-success btn-sm">
+                                           more...
+                                        </a> -->
+                                      </div>
+                                      <br>
+                                      <br>
+                                      <div class="tasker">
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <input class="timing" type="time" placeholder="0:30" step="60">
+                                        <br>
+                                        <br>
+                                      <div class="minitasks">
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <br>
+                                        <br>
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <br>
+                                        <br>
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                      </div>
+                                      <button onclick="startStopwatch()">></button>
+                                      <button onclick="pauseStopwatch()">||</button>
+                                      <h2 class="stopwatche" id="stopwatch">00:00:00</h2>
+
+                                      </div>
                                     </div>
                                 </li>
                                 <li class="list-inline-item event-list">
                                     <div class="px-4">
- 
-                                        <h5 class="font-size-16 text-danger">
-                                            Goal 3
-                                        </h5>
-                                        <p class="text-primary">
-                                            Description
-                                        </p>
-                                        <div>
-                                            <button class="taskadder">+</button>
-                                        </div>
+                                      <div>
+                                        <button class="taskadder" id="addtask" onclick="addtask()">+</button>
+                                        <!-- <a href="main.html"
+                                           class="btn btn-success btn-sm">
+                                           more...
+                                        </a> -->
+                                      </div>
+                                      <br>
+                                      <br>
+                                      <div class="tasker">
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <input class="timing" type="time" placeholder="0:30" step="60">
+                                        <br>
+                                        <br>
+                                      <div class="minitasks">
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <br>
+                                        <br>
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <br>
+                                        <br>
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                      </div>
+                                      <button onclick="startStopwatch()">></button>
+                                      <button onclick="pauseStopwatch()">||</button>
+                                      <h2 class="stopwatche" id="stopwatch">00:00:00</h2>
                                     </div>
                                 </li>
                                 <li class="list-inline-item event-list">
                                     <div class="px-4">
- 
-                                        <h5 class="font-size-16 text-success">
-                                            Goal 4
-                                        </h5>
-                                        <p class="text-muted">
-                                            Description
-                                        </p>
-                                        <div>
-                                            <button class="taskadder">+</button>
-                                        </div>
+                                      <div>
+                                        <button class="taskadder" id="addtask" onclick="addtask()">+</button>
+                                        <!-- <a href="main.html"
+                                           class="btn btn-success btn-sm">
+                                           more...
+                                        </a> -->
+                                      </div>
+                                      <br>
+                                      <br>
+                                      <div class="tasker">
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <input class="timing" type="time" placeholder="0:30" step="60">
+                                        <br>
+                                        <br>
+                                      <div class="minitasks">
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <br>
+                                        <br>
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                        <br>
+                                        <br>
+                                        <button class="taskadder2">✔</button>
+                                        <input class="taskinputer" type="text" placeholder="Add a task">
+                                      </div>
+                                      <button onclick="startStopwatch()">></button>
+                                      <button onclick="pauseStopwatch()">||</button>
+                                      <h2 class="stopwatche" id="stopwatch">00:00:00</h2>
                                     </div>
                                 </li>
                             </ul>
@@ -160,6 +298,7 @@
             </div>
         </div>
     </div>
-    
+
 </body>
+<script src="script.js"></script>
 </html>
