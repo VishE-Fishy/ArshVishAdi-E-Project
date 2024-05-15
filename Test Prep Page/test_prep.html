@@ -134,9 +134,17 @@
           z-index: 1000;
           
         }
+        #dashboardButton{
+          border-radius: 15px;
+        }
+        #dashboardButton:hover{
+          transition: transform 1s;
+          transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
+    <button id="dashboardButton" onclick="dashboard()">Back To Dashboard</button>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -300,5 +308,5 @@
     </div>
 
 </body>
-<script src="script.js"></script>
+<script src="test_prep.js"></script>
 </html>
