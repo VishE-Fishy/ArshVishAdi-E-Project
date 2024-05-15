@@ -14,15 +14,15 @@
     }
     #start_timer{
         background-color:lightgreen;
-        padding: 30px;
+        padding: 20px;
     }
     #stop_timer{
         background-color:lightcoral;
-        padding: 30px;
+        padding: 20px;
     }
     #reset_timer{
         background-color:yellow;
-        padding: 30px;
+        padding: 20px;
     }
     #dashboardButton:hover{
         background-color:rgb(193, 125, 0)
@@ -40,98 +40,103 @@
         background-color: rgb(58, 159, 159);
     }
     #music{
-        margin-left: auto;
+        margin-top: right;
+        border: 1px solid black;
+        text-align: center;
     }
     #start_stopwatch{
         background-color:lightgreen;
-        padding: 30px;
+        padding: 20px;
     }
     #stop_stopwatch{
         background-color:lightcoral;
-        padding: 30px;
+        padding: 20px;
     }
     #reset_stopwatch{
         background-color:yellow;
-        padding: 30px;
+        padding: 20px;
+    }
+    #start_stopwatch:hover{
+        background-color: rgb(46, 152, 46);
+    }
+    #stop_stopwatch:hover{
+        background-color:rgb(190, 72, 72);
+    }
+    #reset_stopwatch:hover{
+        background-color: rgb(160, 160, 0);
     }
     #stopwatch{
-        padding: 30px;
+        font-size: 70px;
+    }
+    #timerStopwatchCenter{
+        text-align: center;
+    }
+    table {
+      margin:auto;
     }
 </style>
 <body>
     <button id="dashboardButton" onclick="dashboard()">Back to Dashboard</button>
-    <div id="Timer">
-        <h2>Timer</h2>
-        <p id="TimerDisplay"></p>
+    <div id="timerStopwatchCenter">
+        <div id="Timer">
+            <h2>Timer</h2>
+            <p id="TimerDisplay"></p>
+        </div>
+        <table style="width: 600px;">
+            <tr>
+                <td> <button id="start_timer" onclick="timer(0)">Start Timer</button></td>
+                <td><button id="stop_timer" onclick="timer(1)" disabled>Stop Timer</button></td>
+                <td><button id="reset_timer" onclick="timer(2)" disabled>Reset Timer</button></td>
+            </tr>       
+        </table>
+        <table style="width: 600px;">
+            <tr>
+                <th>Hours</th>
+                <th>Minutes</th>
+                <th>Seconds</th>
+            </tr>
+            <tr>
+                <td><input id="user_hours"></td>
+                <td><input id="user_minutes"></td>
+                <td><input id="user_seconds"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="3"><label id="countdown"></label></td>
+            </tr>     
+        </table>
+        <br/>
+        <h2>Stopwatch</h2>
+        <table style="width: 600px;">
+            <tr>
+                <td><button id="start_stopwatch" onclick="stopwatch(0)" >Start Stopwatch</button></td>
+                <td><button id="stop_stopwatch" onclick="stopwatch(1)" disabled>Stop Stopwatch</button></td>
+                <td><button id="reset_stopwatch" onclick="stopwatch(2)" disabled>Reset Stopwatch</button></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="3"> 
+                    <label id="stopwatch"></label>
+                </td>
+            </tr>
+        </table>
     </div>
-    <button id="start_timer" onclick="timer(0)">Start Timer</button>
-    <button id="stop_timer" onclick="timer(1)" disabled>Stop Timer</button>
-    <button id="reset_timer" onclick="timer(2)" disabled>Reset Timer</button>
-    <br>
-    <label id="countdown"></label>
-    <br>
-    <table>
-        <tr>
-            <th>Hours</th>
-            <th>Minutes</th>
-            <th>Seconds</th>
-        </tr>
-        <tr>
-            <td><input id="user_hours"></td>
-            <td><input id="user_minutes"></td>
-            <td><input id="user_seconds"></td>
-        </tr>       
-    </table>
-    
-    <table>
-        <tr>
-            <td><button id="start_stopwatch" onclick="stopwatch(0)">Start Stopwatch</button></td>
-            <td><button id="stop_stopwatch" onclick="stopwatch(1)" disabled>Stop Stopwatch</button></td>
-            <td><button id="reset_stopwatch" onclick="stopwatch(2)" disabled>Reset Stopwatch</button></td>
-        </tr>
-        <tr>
-            <td>
-                <label id="stopwatch">test</label>
-            </td>
-        </tr>
-    </table>
-    
+    </br>
+    </br>
     <table id="music">
-    <tr>
-        <td><audio controls autoplay>
-    <source src="1 A.M Study Session 📚 [lofi hip hop chill beats].mp3" type="audio/mpeg">
-    </audio>
-        </td>
-    </tr>
-
-    <tr>
-        <td><audio controls autoplay>
-    <source src="study with me rainy season 🌨, lofi music, 1 hour.mp3" type="audio/mpeg">
-    </audio>
-        </td>
-    </tr>
-
-    <tr>
-        <td><audio controls autoplay>
-    <source src="1 Hour Of Aesthetic Lofi Music To Study Chill Sleep Relax.mp3" type="audio/mpeg">
-    </audio>
-        </td>
-    </tr>
-
-    <tr>
-        <td><audio controls autoplay>
-    <source src="Lo-fi Study Café 📖 1 Hour Chill Lo-fi No Ads to help you focus & study 🎧 Studying Music Work Aid.mp3" type="audio/mpeg">
-    </audio>
-        </td>
-    </tr>
-
-    <tr>
-        <td><audio controls autoplay>
-    <source src="3 A.M Study Session 📚 [lofi hip hop chill beats].mp3" type="audio/mpeg">
-    </audio>
-        </td>
-    </tr>
-</table>
+        <tr id="music">
+            <th id="music"><a href="https://drive.google.com/file/d/1HotvRRpEBbumQ9_SpnYdDIdFkQPKqDHs/view?usp=sharing">1 A.M Study Session 📚 [lofi hip hop chill beats]</a></th>
+            <th id="music"><a href="https://drive.google.com/file/d/1AhPHfLkPxkpBBJEcfM-pbXPSMq-pCy-l/view?usp=sharing">study with me rainy season 🌨, lofi music, 1 hour</a></th>
+            <th id="music"><a href="https://drive.google.com/file/d/1NuxWMllknBLxnJWI8UfVjHvgsoZWZo2J/view?usp=sharing">1 Hour Of Aesthetic Lofi Music To Study Chill Sleep Relax</a></th>
+            <th id="music"><a href="https://drive.google.com/file/d/1JjRFZGWspTCKVOmQmHjcPo3prjoIxT-G/view?usp=sharing">Lo-fi Study Café 📖 1 Hour Chill Lo-fi No Ads ... u focus & study 🎧 Studying Music Work Aid</a></th>
+            <th id="music"><a href="https://drive.google.com/file/d/1jcFD6cO0y6ooNn_TnxHqkFuQ6xjDI4Nw/view?usp=sharing">3 A.M Study Session 📚 [lofi hip hop chill beats]</a></th>
+        </tr>
+        <tr id="music">
+            <td id="music"><audio controls autoplay><source src="1 A.M Study Session 📚 [lofi hip hop chill beats].mp3" type="audio/mpeg"></audio></td>
+            <td id="music"><audio controls autoplay><source src="study with me rainy season 🌨, lofi music, 1 hour.mp3" type="audio/mpeg"></audio></td>
+            <td id="music"><audio controls autoplay><source src="1 Hour Of Aesthetic Lofi Music To Study Chill Sleep Relax.mp3" type="audio/mpeg"></audio></td>
+            <td id="music"><audio controls autoplay><source src="Lo-fi Study Café 📖 1 Hour Chill Lo-fi No Ads to help you focus & study 🎧 Studying Music Work Aid.mp3" type="audio/mpeg"></audio></td>
+            <td id="music"><audio controls autoplay><source src="3 A.M Study Session 📚 [lofi hip hop chill beats].mp3" type="audio/mpeg"></audio></td>
+        </tr>
+    </table>
 </body>
 </html>
 <script src="study.js"></script>
