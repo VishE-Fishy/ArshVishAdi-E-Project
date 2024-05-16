@@ -74,6 +74,7 @@
           border-radius: 5px;
           background-color: whitesmoke;
           box-shadow: 0 0 13px 0 rgba(236, 236, 241, 0.44);
+          padding: 5px;
           border: none;
           
         }
@@ -83,7 +84,7 @@
         }
         .minitasks {
           text-align: left;
-          border-left: 40px solid whitesmoke;
+          border-left: 40px solid transparent;
         }
 
         .taskinputer {
@@ -97,6 +98,10 @@
         .taskadder:hover {
             color: rgba(245, 245, 245, 0.66);
             border-color: rgba(245, 245, 245, 0.66);
+        }
+        .taskadder2:hover {
+            color: gray;
+            border-color: gray;
         }
 
 
@@ -135,10 +140,10 @@
           
         }
         #dashboardButton{
-          border-radius: 15px;
+          border-radius: 10px;
+          transition: transform 1s;
         }
         #dashboardButton:hover{
-          transition: transform 1s;
           transform: scale(1.1);
         }
     </style>
@@ -162,30 +167,26 @@
                                     <div class="px-4">
                                         <div>
                                             <button class="taskadder" id="addtask" onclick="addtask()">+</button>
-                                            <!-- <a href="main.html"
-                                               class="btn btn-success btn-sm">
-                                               more...
-                                            </a> -->
                                         </div>
                                         <br>
                                         <br>
-                                        <div class="tasker">
-                                            <button class="taskadder2">✔</button>
+                                        <div class="tasker" id="tasker1">
+                                            <button class="taskadder2" id="maincompleter" onclick="maincompleter()"">✔</button>
                                             <input class="taskinputer" type="text" placeholder="Add a task">
-                                            <input class="timing" type="time" placeholder="0:30" step="60">
+                                            <input class="timing" id="date1" type="date">
                                             <br>
                                             <br>
                                           <div class="minitasks">
-                                            <button class="taskadder2">✔</button>
-                                            <input class="taskinputer" type="text" placeholder="Add a task">
+                                            <button class="taskadder2" id="checker1.1" onclick="subcompleter1_1()">✔</button>
+                                            <input class="taskinputer" type="text" placeholder="Add a subtask">
                                             <br>
                                             <br>
-                                            <button class="taskadder2">✔</button>
-                                            <input class="taskinputer" type="text" placeholder="Add a task">
+                                            <button class="taskadder2" id="checker1.2" onclick="subcompleter1_2()">✔</button>
+                                            <input class="taskinputer" type="text" placeholder="Add a subtask">
                                             <br>
                                             <br>
-                                            <button class="taskadder2">✔</button>
-                                            <input class="taskinputer" type="text" placeholder="Add a task">
+                                            <button class="taskadder2" id="checker1.3" onclick="subcompleter1_3()">✔</button>
+                                            <input class="taskinputer" type="text" placeholder="Add a subtask">
                                           </div>
                                           <button onclick="startStopwatch()">></button>
                                           <button onclick="pauseStopwatch()">||</button>
@@ -196,9 +197,11 @@
 
                                 </li>
                                 <li class="list-inline-item event-list">
+                                    <br>
+                                    <br>
                                     <div class="px-4">
                                       <div>
-                                        <button class="taskadder" id="addtask" onclick="addtask()">+</button>
+                                        <button class="taskadder" id="addtask" onclick="addtask2()">+</button>
                                         <!-- <a href="main.html"
                                            class="btn btn-success btn-sm">
                                            more...
@@ -206,22 +209,22 @@
                                       </div>
                                       <br>
                                       <br>
-                                      <div class="tasker">
-                                        <button class="taskadder2">✔</button>
+                                      <div class="tasker" id="tasker2">
+                                        <button class="taskadder2" onclick="maincompleter2()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
-                                        <input class="timing" type="time" placeholder="0:30" step="60">
+                                        <input class="timing" id="date2" type="date">
                                         <br>
                                         <br>
                                       <div class="minitasks">
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker2.1" onclick="subcompleter2_1()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                         <br>
                                         <br>
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker2.2" onclick="subcompleter2_2()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                         <br>
                                         <br>
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker2.3" onclick="subcompleter2_3()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                       </div>
                                       <button onclick="startStopwatch()">></button>
@@ -232,9 +235,11 @@
                                     </div>
                                 </li>
                                 <li class="list-inline-item event-list">
+                                    <br>
+                                    <br>
                                     <div class="px-4">
                                       <div>
-                                        <button class="taskadder" id="addtask" onclick="addtask()">+</button>
+                                        <button class="taskadder" id="addtask" onclick="addtask3()">+</button>
                                         <!-- <a href="main.html"
                                            class="btn btn-success btn-sm">
                                            more...
@@ -242,22 +247,22 @@
                                       </div>
                                       <br>
                                       <br>
-                                      <div class="tasker">
-                                        <button class="taskadder2">✔</button>
+                                      <div class="tasker" id="tasker3">
+                                        <button class="taskadder2" onclick="maincompleter3()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
-                                        <input class="timing" type="time" placeholder="0:30" step="60">
+                                        <input class="timing" id="date3" type="date">
                                         <br>
                                         <br>
                                       <div class="minitasks">
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker3.1" onclick="subcompleter3_1()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                         <br>
                                         <br>
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker3.2" onclick="subcompleter3_2()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                         <br>
                                         <br>
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker3.3" onclick="subcompleter3_3()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                       </div>
                                       <button onclick="startStopwatch()">></button>
@@ -266,9 +271,11 @@
                                     </div>
                                 </li>
                                 <li class="list-inline-item event-list">
+                                    <br>
+                                    <br>
                                     <div class="px-4">
                                       <div>
-                                        <button class="taskadder" id="addtask" onclick="addtask()">+</button>
+                                        <button class="taskadder" id="addtask" onclick="addtask4()">+</button>
                                         <!-- <a href="main.html"
                                            class="btn btn-success btn-sm">
                                            more...
@@ -276,22 +283,22 @@
                                       </div>
                                       <br>
                                       <br>
-                                      <div class="tasker">
-                                        <button class="taskadder2">✔</button>
+                                      <div class="tasker" id="tasker4">
+                                        <button class="taskadder2" onclick="maincompleter4()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
-                                        <input class="timing" type="time" placeholder="0:30" step="60">
+                                        <input class="timing" id="date4" type="date">
                                         <br>
                                         <br>
                                       <div class="minitasks">
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker4.1" onclick="subcompleter4_1()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                         <br>
                                         <br>
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker4.2" onclick="subcompleter4_2()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                         <br>
                                         <br>
-                                        <button class="taskadder2">✔</button>
+                                        <button class="taskadder2" id="checker4.3" onclick="subcompleter4_3()">✔</button>
                                         <input class="taskinputer" type="text" placeholder="Add a task">
                                       </div>
                                       <button onclick="startStopwatch()">></button>
@@ -306,7 +313,7 @@
             </div>
         </div>
     </div>
-
+    <button onclick="refreshPage()" color="whitesmoke">Refresh</button>
+<script src="script.js"></script>
 </body>
-<script src="test_prep.js"></script>
 </html>
