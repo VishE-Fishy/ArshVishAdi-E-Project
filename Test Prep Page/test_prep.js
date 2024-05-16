@@ -1,4 +1,3 @@
-
 let timer;
 let hours = 0;
 let minutes = 0;
@@ -99,6 +98,28 @@ function startStopwatch() {
         timer = setInterval(incrementTime, 1000);
     }
 }
+
+function startStopwatch2() {
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(incrementTime2, 1000);
+    }
+}
+
+function startStopwatch3() {
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(incrementTime3, 1000);
+    }
+}
+
+function startStopwatch4() {
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(incrementTime4, 1000);
+    }
+}
+
 function pauseStopwatch() {
     clearInterval(timer);
     isRunning = false;
@@ -112,7 +133,7 @@ function resetStopwatch() {
         minutes = 0;
         seconds = 0;
         document.getElementById("stopwatch").innerText = "00:00:00";
-        
+
     }
 }
 function incrementTime() {
@@ -127,6 +148,69 @@ function incrementTime() {
     }
     let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     document.getElementById("stopwatch").innerText = formattedTime;
+}
+document.querySelector("button:nth-child(3)").onmousedown = function () {
+    mousedownTime = new Date().getTime();
+}
+document.querySelector("button:nth-child(3)").onmouseup = function () {
+    mouseupTime = new Date().getTime();
+    resetStopwatch();
+}
+
+function incrementTime2() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+    }
+    let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("stopwatch2").innerText = formattedTime;
+}
+document.querySelector("button:nth-child(3)").onmousedown = function () {
+    mousedownTime = new Date().getTime();
+}
+document.querySelector("button:nth-child(3)").onmouseup = function () {
+    mouseupTime = new Date().getTime();
+    resetStopwatch();
+}
+
+function incrementTime3() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+    }
+    let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("stopwatch3").innerText = formattedTime;
+}
+document.querySelector("button:nth-child(3)").onmousedown = function () {
+    mousedownTime = new Date().getTime();
+}
+document.querySelector("button:nth-child(3)").onmouseup = function () {
+    mouseupTime = new Date().getTime();
+    resetStopwatch();
+}
+
+function incrementTime4() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+    }
+    let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("stopwatch4").innerText = formattedTime;
 }
 document.querySelector("button:nth-child(3)").onmousedown = function () {
     mousedownTime = new Date().getTime();
