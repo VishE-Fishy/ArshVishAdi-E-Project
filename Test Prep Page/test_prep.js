@@ -93,6 +93,9 @@ function addtask4() {
 
 
 function startStopwatch() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
     if (!isRunning) {
         isRunning = true;
         timer = setInterval(incrementTime, 1000);
@@ -100,6 +103,9 @@ function startStopwatch() {
 }
 
 function startStopwatch2() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
     if (!isRunning) {
         isRunning = true;
         timer = setInterval(incrementTime2, 1000);
@@ -107,6 +113,9 @@ function startStopwatch2() {
 }
 
 function startStopwatch3() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
     if (!isRunning) {
         isRunning = true;
         timer = setInterval(incrementTime3, 1000);
@@ -114,6 +123,9 @@ function startStopwatch3() {
 }
 
 function startStopwatch4() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
     if (!isRunning) {
         isRunning = true;
         timer = setInterval(incrementTime4, 1000);
