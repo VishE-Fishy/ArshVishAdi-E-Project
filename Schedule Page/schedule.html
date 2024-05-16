@@ -7,32 +7,32 @@
 </head>
 <style>
     body{
-        background-color: lightblue;
+        background-color: rgb(0, 0, 45);
     }
     table, th, td {
-        border: 1px solid black
+        border: 1px solid whitesmoke;
     }
     h1{
         text-align:center;
     }
     #dashboard_button{
-        background-color: orange;
+        background-color: whitesmoke;
         border-radius: 15px;
     }
     #saveShare_button{
-        background-color: lightseagreen;
+        background-color: whitesmoke;
         border-radius: 15px;
     }
     #edit_button{
-        background-color: greenyellow;
+        background-color: whitesmoke;
         border-radius: 15px;
     }
     #stopEdit_button{
-        background-color: lightcoral;
+        background-color: whitesmoke;
         border-radius: 15px;
     }
     #clearSchedule_button{
-        background-color: yellow;
+        background-color: whitesmoke;
         border-radius: 15px;
     }
     #dashboard_button:hover{
@@ -55,9 +55,12 @@
         transition: transform 1s;
         transform: scale(1.1);
     }
+    .text {
+        color: whitesmoke;
+    }
 </style>
 <body>
-    <h1>Schedule Your Week!</h1>
+    <h1 class="text">Schedule Your Week</h1>
     <button id="dashboard_button"onclick="dashboard()">Back to Dashboard</button>
     <button id="saveShare_button" onclick="save()">Save Schedule As PDF</button>
     <button id="edit_button" onclick="edit()">Edit Schedule</button>
@@ -65,58 +68,58 @@
     <button id="clearSchedule_button" onclick="clearSchedule()">Clear Schedule</button>
     <table style="width:100%">
         <tr>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-          <th>Sunday</th>
+          <th class="text">Monday</th>
+          <th class="text">Tuesday</th>
+          <th class="text">Wednesday</th>
+          <th class="text">Thursday</th>
+          <th class="text">Friday</th>
+          <th class="text">Saturday</th>
+          <th class="text">Sunday</th>
         </tr>
         <tr>
-            <td>Task #1: <input disabled type="text" id="MondayTask1"></td>
-            <td>Task #1: <input disabled type="text" id="TuesdayTask1"></td>
-            <td>Task #1: <input disabled type="text" id="WednesdayTask1"></td>
-            <td>Task #1: <input disabled type="text" id="ThursdayTask1"></td>
-            <td>Task #1: <input disabled type="text" id="FridayTask1"></td>
-            <td>Task #1: <input disabled type="text" id="SaturdayTask1"></td>
-            <td>Task #1: <input disabled type="text" id="SundayTask1"></td>
+            <td class="text">Task #1: <input disabled type="text" id="MondayTask1"></td>
+            <td class="text">Task #1: <input disabled type="text" id="TuesdayTask1"></td>
+            <td class="text">Task #1: <input disabled type="text" id="WednesdayTask1"></td>
+            <td class="text">Task #1: <input disabled type="text" id="ThursdayTask1"></td>
+            <td class="text">Task #1: <input disabled type="text" id="FridayTask1"></td>
+            <td class="text">Task #1: <input disabled type="text" id="SaturdayTask1"></td>
+            <td class="text">Task #1: <input disabled type="text" id="SundayTask1"></td>
         </tr>
         <tr>
-            <td>Task #2: <input disabled type="text" id="MondayTask2"></td>
-            <td>Task #2: <input disabled type="text" id="TuesdayTask2"></td>
-            <td>Task #2: <input disabled type="text" id="WednesdayTask2"></td>
-            <td>Task #2: <input disabled type="text" id="ThursdayTask2"></td>
-            <td>Task #2: <input disabled type="text" id="FridayTask2"></td>
-            <td>Task #2: <input disabled type="text" id="SaturdayTask2"></td>
-            <td>Task #2: <input disabled type="text" id="SundayTask2"></td>
+            <td class="text">Task #2: <input disabled type="text" id="MondayTask2"></td>
+            <td class="text">Task #2: <input disabled type="text" id="TuesdayTask2"></td>
+            <td class="text">Task #2: <input disabled type="text" id="WednesdayTask2"></td>
+            <td class="text">Task #2: <input disabled type="text" id="ThursdayTask2"></td>
+            <td class="text">Task #2: <input disabled type="text" id="FridayTask2"></td>
+            <td class="text">Task #2: <input disabled type="text" id="SaturdayTask2"></td>
+            <td class="text">Task #2: <input disabled type="text" id="SundayTask2"></td>
           </tr>
           <tr>
-            <td>Task #3: <input disabled type="text" id="MondayTask3"></td>
-            <td>Task #3: <input disabled type="text" id="TuesdayTask3"></td>
-            <td>Task #3: <input disabled type="text" id="WednesdayTask3"></td>
-            <td>Task #3: <input disabled type="text" id="ThursdayTask3"></td>
-            <td>Task #3: <input disabled type="text" id="FridayTask3"></td>
-            <td>Task #3: <input disabled type="text" id="SaturdayTask3"></td>
-            <td>Task #3: <input disabled type="text" id="SundayTask3"></td>
+            <td class="text">Task #3: <input disabled type="text" id="MondayTask3"></td>
+            <td class="text">Task #3: <input disabled type="text" id="TuesdayTask3"></td>
+            <td class="text">Task #3: <input disabled type="text" id="WednesdayTask3"></td>
+            <td class="text">Task #3: <input disabled type="text" id="ThursdayTask3"></td>
+            <td class="text">Task #3: <input disabled type="text" id="FridayTask3"></td>
+            <td class="text">Task #3: <input disabled type="text" id="SaturdayTask3"></td>
+            <td class="text">Task #3: <input disabled type="text" id="SundayTask3"></td>
           </tr>
           <tr>
-            <td>Task #4: <input disabled type="text" id="MondayTask4"></td>
-            <td>Task #4: <input disabled type="text" id="TuesdayTask4"></td>
-            <td>Task #4: <input disabled type="text" id="WednesdayTask4"></td>
-            <td>Task #4: <input disabled type="text" id="ThursdayTask4"></td>
-            <td>Task #4: <input disabled type="text" id="FridayTask4"></td>
-            <td>Task #4: <input disabled type="text" id="SaturdayTask4"></td>
-            <td>Task #4: <input disabled type="text" id="SundayTask4"></td>
+            <td class="text">Task #4: <input disabled type="text" id="MondayTask4"></td>
+            <td class="text">Task #4: <input disabled type="text" id="TuesdayTask4"></td>
+            <td class="text">Task #4: <input disabled type="text" id="WednesdayTask4"></td>
+            <td class="text">Task #4: <input disabled type="text" id="ThursdayTask4"></td>
+            <td class="text">Task #4: <input disabled type="text" id="FridayTask4"></td>
+            <td class="text">Task #4: <input disabled type="text" id="SaturdayTask4"></td>
+            <td class="text">Task #4: <input disabled type="text" id="SundayTask4"></td>
           </tr>
           <tr>
-            <td>Task #5: <input disabled type="text" id="MondayTask5"></td>
-            <td>Task #5: <input disabled type="text" id="TuesdayTask5"></td>
-            <td>Task #5: <input disabled type="text" id="WednesdayTask5"></td>
-            <td>Task #5: <input disabled type="text" id="ThursdayTask5"></td>
-            <td>Task #5: <input disabled type="text" id="FridayTask5"></td>
-            <td>Task #5: <input disabled type="text" id="SaturdayTask5"></td>
-            <td>Task #5: <input disabled type="text" id="SundayTask5"></td>
+            <td class="text">Task #5: <input disabled type="text" id="MondayTask5"></td>
+            <td class="text">Task #5: <input disabled type="text" id="TuesdayTask5"></td>
+            <td class="text">Task #5: <input disabled type="text" id="WednesdayTask5"></td>
+            <td class="text">Task #5: <input disabled type="text" id="ThursdayTask5"></td>
+            <td class="text">Task #5: <input disabled type="text" id="FridayTask5"></td>
+            <td class="text">Task #5: <input disabled type="text" id="SaturdayTask5"></td>
+            <td class="text">Task #5: <input disabled type="text" id="SundayTask5"></td>
           </tr>
       </table>
 </body>
