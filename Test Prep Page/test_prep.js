@@ -1,3 +1,4 @@
+
 let timer;
 let hours = 0;
 let minutes = 0;
@@ -137,4 +138,11 @@ document.querySelector("button:nth-child(3)").onmouseup = function () {
 
 function refreshPage() {
     location.reload(); // Reloads the current page
+}
+function save(){
+    window.alert("Directions to Save Test Prep Page:\n#1) Click the drop-down menu in 'Destination'.\n#2) Then press 'Save as PDF'.\n#3) Make sure that the drop-down menu for 'Pages' is set to 'All', and the drop-down menu for 'Layout' is set to 'Landscape'.\n#4) Press the 'Save' button below, (no need to change anything in 'More Settings').\nYou can share your Test Prep Page by sharing your saved pdf file.")
+    window.print()
+}
+function dashboard(){
+    location.replace("dashboard.html")
 }
