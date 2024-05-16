@@ -1,334 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+let timer;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+let isRunning = false;
+let mousedownTime = 0;
+let mouseupTime = 0;
+let checkclknumber = 0;
+var addtaskbt = document.getElementById("addtask");
+var taskebar = document.getElementById("tasker1")
+var taskebar2 = document.getElementById("tasker2")
+var taskebar3 = document.getElementById("tasker3")
+var taskebar4 = document.getElementById("tasker4")
+var checker1_1 = document.getElementById("checker1.1")
+var checker1_2 = document.getElementById("checker1.2")
+var checker1_3 = document.getElementById("checker1.3")
+var checker2_1 = document.getElementById("checker2.1")
+var checker2_2 = document.getElementById("checker2.2")
+var checker2_3 = document.getElementById("checker2.3")
+var checker3_1 = document.getElementById("checker3.1")
+var checker3_2 = document.getElementById("checker3.2")
+var checker3_3 = document.getElementById("checker3.3")
+var checker4_1 = document.getElementById("checker4.1")
+var checker4_2 = document.getElementById("checker4.2")
+var checker4_3 = document.getElementById("checker4.3")
 
-    <style>
-        body {
-            background-color: rgb(0, 0, 45);
-            margin-top: 20px;
-        }
+function subcompleter1_1() {
+    checker1_1.style.backgroundColor = "green";
+}
+function subcompleter1_2() {
+    checker1_2.style.backgroundColor = "green";
+}
+function subcompleter1_3() {
+    checker1_3.style.backgroundColor = "green";
+}
+function subcompleter2_1() {
+    checker2_1.style.backgroundColor = "green";
+}
+function subcompleter2_2() {
+    checker2_2.style.backgroundColor = "green";
+}
+function subcompleter2_3() {
+    checker2_3.style.backgroundColor = "green";
+}
+function subcompleter3_1() {
+    checker3_1.style.backgroundColor = "green";
+}
+function subcompleter3_2() {
+    checker3_2.style.backgroundColor = "green";
+}
+function subcompleter3_3() {
+    checker3_3.style.backgroundColor = "green";
+}
+function subcompleter4_1() {
+    checker4_1.style.backgroundColor = "green";
+}
+function subcompleter4_2() {
+    checker4_2.style.backgroundColor = "green";
+}
+function subcompleter4_3() {
+    checker4_3.style.backgroundColor = "green";
+}
 
-        .hori-timeline .events {
-            border-top: 6px solid rgb(255, 255, 255);
-        }
+function maincompleter() {
+    // checkclknumber = +1;
+    taskebar.style.backgroundColor = "gray"  
+    // if (checkclknumber == 2) {
+    //     taskebar.style.backgroundColor = "whitesmoke"
+    // }
+}
+function maincompleter2() {
+    taskebar2.style.backgroundColor = "gray"  
+}
+function maincompleter3() {
+    taskebar3.style.backgroundColor = "gray"  
+}
+function maincompleter4() {
+    taskebar4.style.backgroundColor = "gray"  
+}
 
-        .hori-timeline .events 
-        .event-list {
-            display: block;
-            position: relative;
-            text-align: center;
-            margin-right: 0;
-        }
-
-        .hori-timeline .events 
-        .event-list:before {
-            content: "";
-            position: absolute;
-            height: 36px;
-            border-right: 2px dashed #ffffff;
-            top: 0;
-        }
-
-        .hori-timeline .events .event-list 
-        .event-date {
-            position: absolute;
-            top: 38px;
-            left: 0;
-            right: 0;
-            width: 75px;
-            margin: 0 auto;
-            border-radius: 4px;
-            padding: 2px 4px;
-        }
-
-
-        .taskadder {
-            background-color: transparent;
-            border-radius: 100px;
-            color: whitesmoke;
-            text-align:center ;
-            border: 2px solid white;
-        }
-
-        .taskadder2 {
-            background-color: transparent;
-            border-radius: 100px;
-            color: rgb(0, 0, 45);
-            text-align:center ;
-            
-            border: 2px solid rgb(0, 0, 45);
-        }
-
-        
-        .tasker:hover {
-            transform: scale(1.1);
-        }
-
-      
-        .tasker {
-          height: 200px;
-          transition: transform 1s;
-          border-radius: 5px;
-          background-color: whitesmoke;
-          box-shadow: 0 0 13px 0 rgba(236, 236, 241, 0.44);
-          padding: 5px;
-          border: none;
-          
-        }
-
-        .stopwatche {
-          font-size: 13px;
-        }
-        .minitasks {
-          text-align: left;
-          border-left: 40px solid transparent;
-        }
-
-        .taskinputer {
-          background-color: transparent;
-          border-style: none;
-          border: none;
-          
-        }
+function addtask() {
+    taskebar.style.display = "block";
+}
+function addtask2() {
+    taskebar2.style.display = "block";
+}
+function addtask3() {
+    taskebar3.style.display = "block";
+}
+function addtask4() {
+    taskebar4.style.display = "block";
+}
 
 
-        .taskadder:hover {
-            color: rgba(245, 245, 245, 0.66);
-            border-color: rgba(245, 245, 245, 0.66);
-        }
-        .taskadder2:hover {
-            color: gray;
-            border-color: gray;
-        }
+function startStopwatch() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(incrementTime, 1000);
+    }
+}
 
+function startStopwatch2() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(incrementTime2, 1000);
+    }
+}
 
-        @media (min-width: 1140px) {
-            .hori-timeline .events 
-            .event-list {
-                display: inline-block;
-                width: 24%;
-                padding-top: 45px;
-            }
+function startStopwatch3() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(incrementTime3, 1000);
+    }
+}
 
-            .hori-timeline .events 
-            .event-list .event-date {
-                top: -12px;
-            }
-        }
+function startStopwatch4() {
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(incrementTime4, 1000);
+    }
+}
 
-        .card {
-            margin-top:15%;
-            border: none;
-            margin-bottom: 24px;
-            /* box-shadow: 0 0 13px 0 rgba(236, 236, 241, 0.44); */
-        }
-        #title {
-          color: whitesmoke;
-          font-size: 30px;
-          text-align: center;
-          position: fixed;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-          background-color: rgb(0, 0, 45);
-          padding: 10px 0;
-          z-index: 1000;
-          
-        }
-        #dashboardButton{
-          border-radius: 10px;
-          transition: transform 1s;
-        }
-        #dashboardButton:hover{
-          transform: scale(1.1);
-        }
-        #refreshButton{
-          border-radius: 10px;
-          transition: transform 1s;
-        }
-        #refreshButton:hover{
-          transform: scale(1.1);
-        }
-        #saveShare_button{
-          border-radius: 10px;
-          transition: transform 1s;
-        }
-        #saveShare_button:hover{
-          transform: scale(1.1);
-        }
-    </style>
-</head>
-<body>
-    <button id="dashboardButton" onclick="dashboard()">Back To Dashboard</button>
-    <button id="refreshButton" onclick="refreshPage()" color="whitesmoke">Refresh</button>
-    <button id="saveShare_button" onclick="save()">Save Test Prep As PDF</button>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 id="title">
-                            TEST PREPERATION TIMELINE
-                        </h4>
+function pauseStopwatch() {
+    clearInterval(timer);
+    isRunning = false;
+}
+function resetStopwatch() {
+    let pressDuration = mouseupTime - mousedownTime;
+    if (pressDuration >= 3000) { // Check if press duration is 3 seconds or more
+        clearInterval(timer);
+        isRunning = false;
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+        document.getElementById("stopwatch").innerText = "00:00:00";
 
-                        <div class="hori-timeline" dir="ltr">
-                            <ul class="list-inline events">
-                                <li class="list-inline-item event-list">
-                                    <br>
-                                    <br>
-                                    <div class="px-4">
-                                        <div>
-                                            <button class="taskadder" id="addtask" onclick="addtask()">+</button>
-                                        </div>
-                                        <br>
-                                        <br>
-                                        <div class="tasker" id="tasker1">
-                                            <button class="taskadder2" id="maincompleter" onclick="maincompleter()"">✔</button>
-                                            <input class="taskinputer" type="text" placeholder="Add a task">
-                                            <input class="timing" id="date1" type="date">
-                                            <br>
-                                            <br>
-                                          <div class="minitasks">
-                                            <button class="taskadder2" id="checker1.1" onclick="subcompleter1_1()">✔</button>
-                                            <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                            <br>
-                                            <br>
-                                            <button class="taskadder2" id="checker1.2" onclick="subcompleter1_2()">✔</button>
-                                            <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                            <br>
-                                            <br>
-                                            <button class="taskadder2" id="checker1.3" onclick="subcompleter1_3()">✔</button>
-                                            <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                          </div>
-                                          <button onclick="startStopwatch()">></button>
-                                          <button onclick="pauseStopwatch()">||</button>
-                                          <h2 class="stopwatche" id="stopwatch">00:00:00</h2>
-                                            
-                                        </div>
-                                    </div>
+    }
+}
+function incrementTime() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+    }
+    let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("stopwatch").innerText = formattedTime;
+}
+document.querySelector("button:nth-child(3)").onmousedown = function () {
+    mousedownTime = new Date().getTime();
+}
+document.querySelector("button:nth-child(3)").onmouseup = function () {
+    mouseupTime = new Date().getTime();
+    resetStopwatch();
+}
 
-                                </li>
-                                <li class="list-inline-item event-list">
-                                    <br>
-                                    <br>
-                                    <div class="px-4">
-                                      <div>
-                                        <button class="taskadder" id="addtask" onclick="addtask2()">+</button>
-                                        <!-- <a href="main.html"
-                                           class="btn btn-success btn-sm">
-                                           more...
-                                        </a> -->
-                                      </div>
-                                      <br>
-                                      <br>
-                                      <div class="tasker" id="tasker2">
-                                        <button class="taskadder2" onclick="maincompleter2()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a task">
-                                        <input class="timing" id="date2" type="date">
-                                        <br>
-                                        <br>
-                                      <div class="minitasks">
-                                        <button class="taskadder2" id="checker2.1" onclick="subcompleter2_1()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                        <br>
-                                        <br>
-                                        <button class="taskadder2" id="checker2.2" onclick="subcompleter2_2()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                        <br>
-                                        <br>
-                                        <button class="taskadder2" id="checker2.3" onclick="subcompleter2_3()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                      </div>
-                                      <button onclick="startStopwatch2()">></button>
-                                      <button onclick="pauseStopwatch()">||</button>
-                                      <h2 class="stopwatche" id="stopwatch2">00:00:00</h2>
+function incrementTime2() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+    }
+    let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("stopwatch2").innerText = formattedTime;
+}
+document.querySelector("button:nth-child(3)").onmousedown = function () {
+    mousedownTime = new Date().getTime();
+}
+document.querySelector("button:nth-child(3)").onmouseup = function () {
+    mouseupTime = new Date().getTime();
+    resetStopwatch();
+}
 
-                                      </div>
-                                    </div>
-                                </li>
-                                <li class="list-inline-item event-list">
-                                    <br>
-                                    <br>
-                                    <div class="px-4">
-                                      <div>
-                                        <button class="taskadder" id="addtask" onclick="addtask3()">+</button>
-                                        <!-- <a href="main.html"
-                                           class="btn btn-success btn-sm">
-                                           more...
-                                        </a> -->
-                                      </div>
-                                      <br>
-                                      <br>
-                                      <div class="tasker" id="tasker3">
-                                        <button class="taskadder2" onclick="maincompleter3()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a task">
-                                        <input class="timing" id="date3" type="date">
-                                        <br>
-                                        <br>
-                                      <div class="minitasks">
-                                        <button class="taskadder2" id="checker3.1" onclick="subcompleter3_1()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                        <br>
-                                        <br>
-                                        <button class="taskadder2" id="checker3.2" onclick="subcompleter3_2()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                        <br>
-                                        <br>
-                                        <button class="taskadder2" id="checker3.3" onclick="subcompleter3_3()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                      </div>
-                                      <button onclick="startStopwatch3()">></button>
-                                      <button onclick="pauseStopwatch()">||</button>
-                                      <h2 class="stopwatche" id="stopwatch3">00:00:00</h2>
-                                    </div>
-                                </li>
-                                <li class="list-inline-item event-list">
-                                    <br>
-                                    <br>
-                                    <div class="px-4">
-                                      <div>
-                                        <button class="taskadder" id="addtask" onclick="addtask4()">+</button>
-                                        <!-- <a href="main.html"
-                                           class="btn btn-success btn-sm">
-                                           more...
-                                        </a> -->
-                                      </div>
-                                      <br>
-                                      <br>
-                                      <div class="tasker" id="tasker4">
-                                        <button class="taskadder2" onclick="maincompleter4()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                        <input class="timing" id="date4" type="date">
-                                        <br>
-                                        <br>
-                                      <div class="minitasks">
-                                        <button class="taskadder2" id="checker4.1" onclick="subcompleter4_1()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                        <br>
-                                        <br>
-                                        <button class="taskadder2" id="checker4.2" onclick="subcompleter4_2()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                        <br>
-                                        <br>
-                                        <button class="taskadder2" id="checker4.3" onclick="subcompleter4_3()">✔</button>
-                                        <input class="taskinputer" type="text" placeholder="Add a subtask">
-                                      </div>
-                                      <button onclick="startStopwatch4()">></button>
-                                      <button onclick="pauseStopwatch()">||</button>
-                                      <h2 class="stopwatche" id="stopwatch4">00:00:00</h2>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<script src="test_prep.js"></script>
-</body>
-</html>
+function incrementTime3() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+    }
+    let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("stopwatch3").innerText = formattedTime;
+}
+document.querySelector("button:nth-child(3)").onmousedown = function () {
+    mousedownTime = new Date().getTime();
+}
+document.querySelector("button:nth-child(3)").onmouseup = function () {
+    mouseupTime = new Date().getTime();
+    resetStopwatch();
+}
+
+function incrementTime4() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+    }
+    let formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("stopwatch4").innerText = formattedTime;
+}
+document.querySelector("button:nth-child(3)").onmousedown = function () {
+    mousedownTime = new Date().getTime();
+}
+document.querySelector("button:nth-child(3)").onmouseup = function () {
+    mouseupTime = new Date().getTime();
+    resetStopwatch();
+}
+
+function refreshPage() {
+    location.reload(); // Reloads the current page
+}
+function save(){
+    window.alert("Directions to Save Test Prep Page:\n#1) Click the drop-down menu in 'Destination'.\n#2) Then press 'Save as PDF'.\n#3) Make sure that the drop-down menu for 'Pages' is set to 'All', and the drop-down menu for 'Layout' is set to 'Landscape'.\n#4) Press the 'Save' button below, (no need to change anything in 'More Settings').\nYou can share your Test Prep Page by sharing your saved pdf file.")
+    window.print()
+}
+function dashboard(){
+    location.replace("dashboard.html")
+}
