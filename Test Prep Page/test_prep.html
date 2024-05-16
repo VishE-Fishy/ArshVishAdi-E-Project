@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,10 +147,26 @@
         #dashboardButton:hover{
           transform: scale(1.1);
         }
+        #refreshButton{
+          border-radius: 10px;
+          transition: transform 1s;
+        }
+        #refreshButton:hover{
+          transform: scale(1.1);
+        }
+        #saveShare_button{
+          border-radius: 10px;
+          transition: transform 1s;
+        }
+        #saveShare_button:hover{
+          transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
     <button id="dashboardButton" onclick="dashboard()">Back To Dashboard</button>
+    <button id="refreshButton" onclick="refreshPage()" color="whitesmoke">Refresh</button>
+    <button id="saveShare_button" onclick="save()">Save Test Prep As PDF</button>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -313,7 +330,6 @@
             </div>
         </div>
     </div>
-    <button onclick="refreshPage()" color="whitesmoke">Refresh</button>
 <script src="test_prep.js"></script>
 </body>
 </html>
