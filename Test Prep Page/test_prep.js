@@ -240,5 +240,5 @@ function save(){
     window.print()
 }
 function dashboard(){
-    location.replace("dashboard.html")
+    location.replace("index.html")
 }
