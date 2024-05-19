@@ -1,5 +1,5 @@
 function dashboard(){
-    location.replace("dashboard.html")
+    location.replace("index.html")
 }
 function save(){
     window.alert("Directions to Save Schedule:\n#1) Click the drop-down menu in 'Destination'.\n#2) Then press 'Save as PDF'.\n#3) Make sure that the drop-down menu for 'Pages' is set to 'All', and the drop-down menu for 'Layout' is set to 'Landscape'.\n#4) Press the 'Save' button below, (no need to change anything in 'More Settings').\nYou can share your schedule by sharing your saved pdf file.")
