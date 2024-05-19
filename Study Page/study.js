@@ -1,5 +1,5 @@
 function dashboard(){
-  location.replace("dashboard.html")
+  location.replace("index.html")
 }
 var timerDisplay;
 var countdown = hours * 3600 + minutes * 60 + seconds * 1;
